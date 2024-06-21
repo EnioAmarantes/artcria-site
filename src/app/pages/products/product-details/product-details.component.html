@@ -1,9 +1,30 @@
 <div class="container">
-    <div *ngIf="product">
-        <h2>{{ product.Nome }}</h2>
-    </div>
-    
-    <div *ngIf="!product">
-        <p>Produto não encontrado.</p>
-    </div>
+    @if(product){
+        <mat-card>
+            <mat-card-header>
+                <img mat-card-sm-image src="{{product.Imagem}}" />
+                <mat-card-title-group>
+                    <mat-card-title>
+                        <h2>
+                            {{product.Nome}}
+                        </h2>
+                    </mat-card-title>
+                    <mat-card-subtitle>
+                        <h3>
+                            <strong>
+                                {{product.Preco | currency: 'BRL'}}
+                            </strong>
+                        </h3>
+                    </mat-card-subtitle>
+                </mat-card-title-group>
+            </mat-card-header>
+                        
+            <mat-card-content>
+                {{product.Descricao}}
+            </mat-card-content>
+        </mat-card>
+    }
+    @else {
+        <app-no-products-message></app-no-products-message>
+    }
 </div>

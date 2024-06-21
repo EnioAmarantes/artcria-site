@@ -42,8 +42,6 @@ export class SearchbarComponent {
   }
 
   Pesquisar(): void {
-    if(this.search.searchText === '')
-      return;
     this.searchEvent.emit(this.search);
     this.Clear();
   }
@@ -55,6 +53,6 @@ export class SearchbarComponent {
   ChangeCategory(event: MatChipSelectionChange, item: Category, index: number) {
     item.selected = event.selected;
     this.search.category = this.categories[index] = item;
-    this.categoryEvent.emit(this.search.category);
+    this.searchEvent.emit(this.search);
   }
 }

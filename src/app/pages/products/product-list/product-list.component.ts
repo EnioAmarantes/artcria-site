@@ -12,7 +12,7 @@ import { NoProductsMessageComponent } from '../no-products-message/no-products-m
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [ ProductCardComponent, SearchbarComponent, NoProductsMessageComponent, ],
+  imports: [ ProductCardComponent, SearchbarComponent, NoProductsMessageComponent ],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.scss'
 })
@@ -25,13 +25,14 @@ export class ProductListComponent {
   }
 
   Pesquisar(search: Search){
-    alert(search.searchText)
-    alert(search.category.Nome)
+    this.products = this.productsService.getByName(search.searchText);
+    this.FiltrarCategoria(search.category);
   }
 
   FiltrarCategoria(category: Category){
     if(category.id == 1 && category.Nome == 'Todos')
-      return;
-    this.filteredProducts = this.products.filter(p => p.idCategory == category.id);
+      this.filteredProducts = this.products;
+    else 
+      this.filteredProducts = this.products.filter(p => p.idCategory == category.id);
   }
 }
