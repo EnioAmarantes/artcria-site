@@ -1,0 +1,29 @@
+/* app.component.css */
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: whitesmoke;
+    padding: 20px;
+    border-radius: 1.7em;
+}
+
+mat-form-field {
+    width: 100%;
+    max-width: 600px;
+    background-color: white !important;
+}
+
+.chip-list {
+    margin-top: 0.25em; /* Adiciona espaço entre a barra de pesquisa e o chip list */
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Espaçamento entre os chips */
+}
+
+button {
+    border: none;
+    margin-right: 0.3em;
+}

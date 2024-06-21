@@ -1,0 +1,19 @@
+<mat-card>
+    <div class="image-container">
+        <img class="image" mat-card-imag src={{product.Imagem}} alt="{{ product.Nome }}"/>
+    </div>
+    <mat-card-header>
+        <mat-card-title>{{ product.Nome | titlecase }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <h2><strong>{{ product.Preco | currency: 'BRL' }}</strong></h2>
+    </mat-card-content>
+    <mat-card-actions style="padding: 10px;">
+        <button mat-button>
+            <img src="assets/whats_icon.jpg" style="width:30px; height: 30px; margin: 10px; object-fit: cover;">
+        </button>
+        <button mat-button [routerLink]="['/product', product.id]">
+            <span>Saiba mais</span>
+        </button>
+    </mat-card-actions>
+</mat-card>

@@ -1,7 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+// Variable overrides first
+$primary: #900;
+$enable-shadows: true;
+$prefix: "mo-";
+
+// Then import Bootstrap
+@import "../node_modules/bootstrap/scss/bootstrap";
 
 body {
     background:
       linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
       url("assets/background.jpg");
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

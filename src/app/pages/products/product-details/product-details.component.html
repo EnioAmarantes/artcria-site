@@ -1,0 +1,9 @@
+<div class="container">
+    <div *ngIf="product">
+        <h2>{{ product.Nome }}</h2>
+    </div>
+    
+    <div *ngIf="!product">
+        <p>Produto não encontrado.</p>
+    </div>
+</div>

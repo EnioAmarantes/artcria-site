@@ -1,0 +1,32 @@
+mat-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    border-radius: 1.4em;
+    padding: 1.3em;
+    box-shadow: 2px 2px gray;
+    cursor: pointer;
+}
+
+/* Estilo para o contêiner da imagem */
+.image-container {
+    display: flex;                  /* Define como um contêiner flexível */
+    justify-content: center;        /* Centraliza horizontalmente os filhos */
+    align-items: center;            /* Centraliza verticalmente os filhos */
+    width: 100%;                    /* Largura total */
+    padding-top: 100%;              /* Mantém a proporção 1:1 (quadrado) */
+    position: relative;             /* Necessário para o posicionamento absoluto da imagem */
+  }
+  
+  /* Estilo para a imagem */
+  .image {
+    position: absolute;             /* Necessário para preencher o contêiner */
+    top: 0;                         /* Alinha ao topo */
+    left: 0;                        /* Alinha à esquerda */
+    width: 100%;                    /* Largura total */
+    height: 100%;                   /* Altura total */
+    object-fit: contain;            /* Ajusta a imagem sem perder a proporção */
+    border-radius: 1.5rem;          /* Bordas arredondadas (equivalente a rounded-3xl) */
+    vertical-align: middle;         /* Alinha verticalmente ao meio */
+  }

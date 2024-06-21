@@ -1,0 +1,17 @@
+<div class="search-container">
+    <mat-form-field appearance="outline">
+        <mat-label>Pesquisar Produtos</mat-label>
+        <input matInput class="searchText" placeholder="" (keydown.enter)="Pesquisar()" [(ngModel)]="search.searchText">
+        <button matIconSuffix (click)="Pesquisar()">
+            <mat-icon fontIcon="search" color="primary"></mat-icon>
+        </button>
+    </mat-form-field>
+
+    <mat-chip-listbox class="chip-list">
+        @for (item of categories; track $index) {
+            <mat-chip-option [selected]="item.selected" color="primary" (selectionChange)="ChangeCategory($event, item, $index)">
+                {{item.Nome}}
+            </mat-chip-option>
+        }
+    </mat-chip-listbox>
+</div>

@@ -1,0 +1,11 @@
+<app-searchbar (searchEvent)="Pesquisar($event)" (categoryEvent)="FiltrarCategoria($event)"></app-searchbar>
+@if(filteredProducts && filteredProducts.length > 0){
+    <div class="responsive-grid">
+        @for(item of filteredProducts; track item){
+            <app-product-card [product]="item"></app-product-card>
+        }
+    </div>
+}
+@else {
+    <app-no-products-message></app-no-products-message>
+}

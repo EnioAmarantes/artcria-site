@@ -1,0 +1,15 @@
+<div class="carousel-container">
+  <div class="action-button">
+      <button mat-icon-button (click)="backImage()">
+          <mat-icon fontIcon="arrow_back_ios" color="primary"></mat-icon>
+      </button>
+  </div>
+  <div class="carousel-image">
+      <img [src]="selectedImage" alt="carousel image" />
+  </div>
+  <div class="action-button">
+      <button mat-icon-button (click)="nextImage()">
+          <mat-icon fontIcon="arrow_forward_ios" color="primary"></mat-icon>
+      </button>
+  </div>
+</div>

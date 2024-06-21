@@ -1,0 +1,30 @@
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 100%;
+}
+
+.carousel-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-image img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.action-button {
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .action-button {
+        display: none; /* Esconde os botões de navegação em telas pequenas */
+    }
+}
