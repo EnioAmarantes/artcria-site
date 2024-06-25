@@ -3,14 +3,15 @@ import { Injectable } from '@angular/core';
 import { IProductService } from '../interfaces/product-service.interface';
 import { Product } from '../../models/product.class';
 import { Observable, map } from 'rxjs';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GoogleSheetsService implements IProductService {
 
-  private sheetId = '15gsj8tQr8kFB14CGbgwGU_mFoL60LGNfzNRY3wwKJeM';
-  private apiKey = 'AIzaSyDnQrIoVNOAB0ZqQLGd-qMZ3JM_4xlOABg';
+  private sheetId = environment.googleSheets.sheetId;
+  private apiKey = environment.googleSheets.apiKey;
 
   constructor(private http: HttpClient) { }
 
