@@ -7,6 +7,8 @@ export class Product {
     Descricao: string;
     Preco: number;
     Imagem: string;
+    Marca: string;
+    Condicao: string;
 
     constructor(){
         this.id = 0;
@@ -14,5 +16,7 @@ export class Product {
         this.Descricao = '';
         this.Preco = 0.0;
         this.Imagem = '';
+        this.Marca = '';
+        this.Condicao = '';
     }
 }

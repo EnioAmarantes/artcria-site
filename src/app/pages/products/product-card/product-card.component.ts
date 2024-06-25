@@ -25,4 +25,8 @@ import { RouterLink } from '@angular/router';
 export class ProductCardComponent {
   @Input() product!: Product
 
+  TenhoInteresse(): string {
+    return `Olá, tenho interesse neste produto ${this.product.Nome}`;
+  }
+
 }

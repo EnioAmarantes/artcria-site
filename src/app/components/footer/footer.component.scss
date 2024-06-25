@@ -1,0 +1,33 @@
+.footer {
+    width: 100%;
+    background-color: whitesmoke;
+    padding: 2em;
+    color: gray;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items:flex-start;
+}
+
+.interno {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-between;
+    img{
+        width: 8rem;
+    }
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 0.5em;
+    mat-icon{
+        margin-inline: 0.5em;
+    }
+}

@@ -1,31 +1,43 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { Product } from '../../../models/product.class';
-import { PRODUCT_LIST } from '../../../services/products/products';
 import { ProductCardComponent } from '../product-card/product-card.component';
-import { ProductsService } from '../../../services/products/products.service';
 import { SearchbarComponent } from '../../../components/searchbar/searchbar.component';
 import { Search } from '../../../models/search.class';
 import { Category } from '../../../models/category.interface';
-import { NgIf } from '@angular/common';
 import { NoProductsMessageComponent } from '../no-products-message/no-products-message.component';
+import { IProductService } from '../../../services/interfaces/product-service.interface';
+import { GoogleSheetsService } from '../../../services/google-sheets/google-sheets.service';
+import { PRODUCT_SERVICE_TOKEN } from '../../../services/interfaces/product.service.token';
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
   imports: [ ProductCardComponent, SearchbarComponent, NoProductsMessageComponent ],
   templateUrl: './product-list.component.html',
-  styleUrl: './product-list.component.scss'
+  styleUrl: './product-list.component.scss',
+  providers: [
+    { provide: PRODUCT_SERVICE_TOKEN, useClass: GoogleSheetsService}
+  ]
 })
 export class ProductListComponent {
-  products: Product[];
-  filteredProducts: Product[];
+  products: Product[] = [];
+  filteredProducts: Product[] = [];
   
-  constructor(private productsService : ProductsService){
-    this.filteredProducts = this.products = productsService.getAll();
+  constructor(
+    @Inject(PRODUCT_SERVICE_TOKEN) private productService : IProductService
+  )
+  {
+    productService.getAll()
+      .subscribe((data: Product[]) => {
+        this.filteredProducts = this.products = data;
+      });
   }
 
   Pesquisar(search: Search){
-    this.products = this.productsService.getByName(search.searchText);
+    this.productService.getByName(search.searchText)
+      .subscribe((data: Product[]) => {
+        this.products = data;
+      })
     this.FiltrarCategoria(search.category);
   }
 

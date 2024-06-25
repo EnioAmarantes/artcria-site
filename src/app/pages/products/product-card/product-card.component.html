@@ -9,9 +9,9 @@
         <h2><strong>{{ product.Preco | currency: 'BRL' }}</strong></h2>
     </mat-card-content>
     <mat-card-actions style="padding: 10px;">
-        <button mat-button>
+        <a aria-label="Conversar no Whatsapp" href="https://api.whatsapp.com/send/?phone=554388417561&text={{TenhoInteresse()}}&type=phone_number&app_absent=0" target="_blank">
             <img src="assets/whats_icon.jpg" style="width:30px; height: 30px; margin: 10px; object-fit: cover;">
-        </button>
+        </a>
         <button mat-button [routerLink]="['/product', product.id]">
             <span>Saiba mais</span>
         </button>
