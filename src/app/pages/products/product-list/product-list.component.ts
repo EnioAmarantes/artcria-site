@@ -45,6 +45,6 @@ export class ProductListComponent {
     if(category.id == 1 && category.Nome == 'Todos')
       this.filteredProducts = this.products;
     else 
-      this.filteredProducts = this.products.filter(p => p.idCategory == category.id);
+      this.filteredProducts = this.products.filter(p => p.CategoryName.toLocaleLowerCase() === category.Nome.toLocaleLowerCase());
   }
 }

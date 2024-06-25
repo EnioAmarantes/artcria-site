@@ -54,7 +54,7 @@ export class GoogleSheetsService implements IProductService {
     const headerMapping: { [key: string]: (product: Product, value: any) => void } = {
       'id': (product, value) => product.id = Number(value),
       'title': (product, value) => product.Nome = value,
-      'idCategory': (product, value) => product.idCategory = Number(value),
+      'google_product_category': (product, value) => product.CategoryName = value,
       'description': (product, value) => product.Descricao = value,
       'price': (product, value) => product.Preco = Number(value),
       'image_link': (product, value) => product.Imagem = value.replace('https://artcria.000webhostapp.com/', ''),

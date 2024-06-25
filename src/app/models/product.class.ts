@@ -3,7 +3,7 @@ import { Category } from "./category.interface";
 export class Product {
     id: number;
     Nome: string;
-    idCategory?: number;
+    CategoryName: string;
     Descricao: string;
     Preco: number;
     Imagem: string;
@@ -18,5 +18,6 @@ export class Product {
         this.Imagem = '';
         this.Marca = '';
         this.Condicao = '';
+        this.CategoryName = '';
     }
 }
