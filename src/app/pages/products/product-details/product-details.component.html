@@ -5,7 +5,7 @@
 
             <div class="product-container">
                 <h2>{{ product.Nome }}</h2>
-                <h3>CATEGORIA</h3>
+                <h3>{{ product.CategoryName.toLocaleUpperCase() }}</h3>
 
                 <div class="atributos">
                     <div>
@@ -15,22 +15,9 @@
                         </div>
 
                         <div class="item">
-                            <span>Categoria</span>
-                            <span>Categoria do Produto</span>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="item">
-                            <span>Unidade</span>
-                            <span>Unidade do produto</span>
-                        </div>
-
-                        <div class="item">
                             <span>Condição</span>
-                            <span>{{ product.Condicao }}</span>
+                            <span>{{product.Condicao }}</span>
                         </div>
-
                     </div>
                 </div>
 

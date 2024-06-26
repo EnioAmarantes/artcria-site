@@ -54,3 +54,52 @@ a {
     flex-direction: column;
     align-items: center;
 }
+
+@media (max-width: 768px) {
+    .column-container {
+        max-width: 90%;
+        padding-inline: 2em;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-container {
+        width: 100%;
+    }
+
+    img {
+        max-width: 80%;
+        margin-inline: 0;
+    }
+
+    .atributos {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .column-container {
+        padding-inline: 1em;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    .atributos {
+        width: 100%;
+    }
+
+    .footer {
+        width: 100%;
+    }
+}

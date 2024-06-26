@@ -1,6 +1,6 @@
 <mat-card>
     <div class="image-container">
-        <img class="image" mat-card-imag src={{product.Imagem}} alt="{{ product.Nome }}"/>
+        <img class="image" mat-card-imag src={{product.Imagem}} alt="{{ product.Nome }}" [routerLink]="['/product', product.id]"/>
     </div>
     <mat-card-header>
         <mat-card-title>{{ product.Nome | titlecase }}</mat-card-title>

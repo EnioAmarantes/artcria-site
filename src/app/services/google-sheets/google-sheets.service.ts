@@ -59,7 +59,7 @@ export class GoogleSheetsService implements IProductService {
       'price': (product, value) => product.Preco = Number(value),
       'image_link': (product, value) => product.Imagem = value.replace('https://artcria.000webhostapp.com/', ''),
       'brand': (product, value) => product.Marca = value,
-      'condition': (product, value) => product.Condicao = value,
+      'condition': (product, value) => product.Condicao = value.replace('new', 'Novo'),
     };
 
     return rows.slice(1)
